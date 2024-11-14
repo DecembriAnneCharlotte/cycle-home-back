@@ -26,4 +26,10 @@ export class UserService {
     if (index === -1) throw new NotFoundException('User not found');
     return this.users.splice(index, 1);
   }
+
+  async findByEmail(email: string): Promise<any> {
+    const user = this.users.find((user) => user.email === email);
+    if (!user) throw new NotFoundException('User not found');
+    return user;
+  }
 }

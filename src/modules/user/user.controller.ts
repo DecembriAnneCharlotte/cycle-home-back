@@ -37,41 +37,6 @@ export class UserController {
   async findOne(@Param('id') id: string) {
     return this.userService.findOne(id);
   }
-}
-
-// import { Controller, Post, Body, Get, Param, Delete, UseGuards, Request } from '@nestjs/common';
-// import { UserService } from './user.service';
-// import { CreateUserDto } from './dto/create-user.dto';
-// import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-// import { JwtAuthGuard } from '../auth/jwt-auth.guard';
-// import { RolesGuard } from '../auth/roles.guard';
-// import { Roles } from '../auth/roles.decorator';
-
-// @ApiTags('users')
-// @Controller('users')
-// export class UserController {
-//   constructor(private readonly userService: UserService) {}
-
-//   @Post()
-//   async create(@Body() createUserDto: CreateUserDto) {
-//     return this.userService.create(createUserDto);
-//   }
-
-//   @UseGuards(JwtAuthGuard, RolesGuard)
-//   @Roles('admin', 'super_admin')
-//   @ApiBearerAuth()
-//   @Get(':id')
-//   async findOne(@Param('id') id: string) {
-//     return this.userService.findOne(id);
-//   }
-
-//   @UseGuards(JwtAuthGuard, RolesGuard)
-//   @Roles('admin', 'super_admin')
-//   @ApiBearerAuth()
-//   @Get()
-//   async findAll() {
-//     return this.userService.findAll();
-//   }
 
 //   @UseGuards(JwtAuthGuard, RolesGuard)
 //   @Roles('admin', 'super_admin')
@@ -80,4 +45,5 @@ export class UserController {
 //   async remove(@Param('id') id: string) {
 //     return this.userService.remove(id);
 //   }
-// }
+
+}
